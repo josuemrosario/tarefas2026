@@ -1,8 +1,101 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <%- include('./partials/head') %>
-  <body>
-    <h1><%= mensagem %></h1>
-    <p>Template: index.ejs</p>
+  <body >
+    <span class="d-block p-2 text-bg-primary">Meu APP de Tarefas</span>
+    <div class="p-3">
+
+      <!-- inicio botoes de cadatrar e excluir -->
+      
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Cadastrar Tarefa
+      </button>
+      <button type="button" class="btn btn-primary">Excluir Tarefas</button>
+       <!-- fim botoes de cadatrar e excluir -->
+      
+      <!-- inicio da tabela -->
+      <table class="table mt-3">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">#</th>
+            <th scope="col">Data Tarefa</th>
+            <th scope="col">Hora Tarefa</th>
+            <th scope="col">Descrição</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            </th>
+            <th scope="row">1</th>
+            <td>06/04/2026</td>
+            <td>12:00</td>
+            <td>Lanchar no Burguer King</td>
+            <th><button type="button" class="btn btn-primary">Editar</button></th>
+          </tr>
+          <tr>
+            <th scope="row">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            </th>
+            <th scope="row">2</th>
+            <td>06/04/2026</td>
+            <td>07:00</td>
+            <td>Estudar para concurso</td>
+            <th><button type="button" class="btn btn-primary">Editar</button></th>
+          </tr>
+          <tr>
+            <th scope="row">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            </th>
+            <th scope="row">3</th>
+            <td>09/04/2026</td>
+            <td>18:00</td>
+            <td>Aniversário da cunhada</td>
+            <th><button type="button" class="btn btn-primary">Editar</button></th>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- fim da tabela -->
+
+    </div>
+
+     <!-- inicio Modal para cadastrar e editar -->
+     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar Tarefa</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+               <!-- campo data da tarefa -->
+               <label for="frmdata" class="form-label">Data</label>
+               <input type="date" class="form-control" id="frmdata">
+
+                <!-- campo hora da tarefa -->
+                <label for="frmhora" class="form-label">Hora</label>
+                <input type="time" class="form-control" id="frmhora">
+
+                <!-- campo descricao da tarefa -->
+                <label for="frmdescricao" class="form-label">Descricao</label>
+                <input type="text" class="form-control" id="frmdescricao">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+     <!-- Final Modal para cadastrar e editar -->
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   </body>
 </html>

@@ -5,31 +5,15 @@ const porta = 3000;
 const express = require("express");
 const app = express();
 
+const tarefaRoutes = require('./routes/tarefaRoutes'); 
+
 // configurações iniciais
 app.use(morgan("dev"));
 app.set("views", "./views"); //adicionado
 app.set("view engine", "ejs"); //adicionado
+app.use(express.static('./public'));
 
-// rotas da aplicação
-app.get("/", (req, res) => {
-  //res.send("rota raiz");
-  res.render("index",{mensagem:"rota raiz", titulo:"pagina principal"})
-});
-
-app.get("/qualquercoisa", (req, res) => {
-  //res.send("rota qualquer coisa");
-  res.render("index",{mensagem:"Rota qualquer coisa", titulo:"qualquer coisa"})
-});
-
-app.get("/contato", (req, res) => {
-  //res.send("rota contato");
-  res.render("index",{mensagem:"rota contato", titulo:"contato"})
-});
-
-app.get("/sobre", (req, res) => {
-  //res.send("rota sobre");
-  res.render("index",{mensagem:"rota sobre", titulo:"sobre"})
-});
+app.use("/",tarefaRoutes)
 
 app.use((req, res) => {
   //res.status(404).send("Página não encontrada!");
