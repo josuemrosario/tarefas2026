@@ -26,36 +26,23 @@
           </tr>
         </thead>
         <tbody>
+          <% dados.forEach((linha,indice)=>{ %>
+          <!-- inicio da linha -->
           <tr>
             <th scope="row">
                 <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
             </th>
-            <th scope="row">1</th>
-            <td>06/04/2026</td>
-            <td>12:00</td>
-            <td>Lanchar no Burguer King</td>
+            
+            <th scope="row"><%= indice + 1 %></th>
+            <td><%= linha.data %></td>
+            <td><%= linha.hora %></td>
+            <td><%= linha.descricao %></td>
             <th><button type="button" class="btn btn-primary">Editar</button></th>
           </tr>
-          <tr>
-            <th scope="row">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-            </th>
-            <th scope="row">2</th>
-            <td>06/04/2026</td>
-            <td>07:00</td>
-            <td>Estudar para concurso</td>
-            <th><button type="button" class="btn btn-primary">Editar</button></th>
-          </tr>
-          <tr>
-            <th scope="row">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-            </th>
-            <th scope="row">3</th>
-            <td>09/04/2026</td>
-            <td>18:00</td>
-            <td>Aniversário da cunhada</td>
-            <th><button type="button" class="btn btn-primary">Editar</button></th>
-          </tr>
+          <!-- final da linha -->             
+          <% }) %>
+
+
         </tbody>
       </table>
 
